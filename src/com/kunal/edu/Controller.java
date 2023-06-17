@@ -1,4 +1,5 @@
 package com.kunal.edu;
+import javafx.animation.TranslateTransition;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -10,6 +11,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Shape;
+import javafx.scene.transform.Translate;
+import javafx.util.Duration;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -29,6 +32,7 @@ public class Controller implements Initializable{
     private static String PlayerOneName = "Player One";
     private static String PlayerTwoName = "Player Two";
 
+    private Disc [][] InsertedDisc = new Disc[ROWS][COLUMS];
 
     @FXML
     public GridPane rootGridPane;
@@ -102,8 +106,31 @@ public class Controller implements Initializable{
         return rectangleArrayList;
     }
 
-    private static void insertdisc(Disc disc , int colum){
+    private void insertdisc(Disc disc , int colum){
 
+        int row = ROWS -1;
+        while (row > 0){
+            if (InsertedDisc[row][colum] == null){
+                break;
+            }
+            row--;
+        }
+        if (row<0){
+            return;
+        }
+        InsertedDisc[row][colum] = disc;
+        InsertedDiscPane.getChildren().add(disc);
+        disc.setTranslateX(colum * (DISCRADIUS+5) + DISCRADIUS/4);
+        TranslateTransition translateTransition = new TranslateTransition(Duration.seconds(0.5),disc);
+        translateTransition.setToY(row * (DISCRADIUS+5) + DISCRADIUS/4);
+        translateTransition.setOnFinished(event -> {
+
+            isPlayerOneTurn = !isPlayerOneTurn;
+
+            PlayerNameLabel.setText(isPlayerOneTurn?PlayerOneName:PlayerTwoName);
+
+        });
+        translateTransition.play();
     }
 
     private static class Disc extends Circle{
