@@ -3,15 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d95b5a95-99f1-4bb2-9382-ff2459454fa2" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Controller.class" afterPath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Controller.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Game.fxml" afterPath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Game.fxml" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Main$1.class" afterPath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Main$1.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Main$2.class" afterPath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Main$2.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Main$3.class" afterPath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Main$3.class" />
-      <change beforePath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Main.class" afterPath="$PROJECT_DIR$/out/production/Desktop/com/kunal/edu/Main.class" />
       <change beforePath="$PROJECT_DIR$/src/com/kunal/edu/Controller.java" afterPath="$PROJECT_DIR$/src/com/kunal/edu/Controller.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/kunal/edu/Game.fxml" afterPath="$PROJECT_DIR$/src/com/kunal/edu/Game.fxml" />
-      <change beforePath="$PROJECT_DIR$/src/com/kunal/edu/Main.java" afterPath="$PROJECT_DIR$/src/com/kunal/edu/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -46,10 +38,14 @@
       <file leaf-file-name="Controller.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kunal/edu/Controller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+            <state relative-caret-position="120">
+              <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#2752#2753#0" expanded="true" />
+                <element signature="e#2837#2838#0" expanded="true" />
+                <element signature="e#3007#3008#0" expanded="true" />
+                <element signature="e#3083#3084#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,6 +73,11 @@
         <option value="FxmlFile" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>is</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -388,6 +389,10 @@
           <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2752#2753#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -416,6 +421,10 @@
           <caret line="36" column="35" lean-forward="true" selection-start-line="36" selection-start-column="35" selection-end-line="36" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2752#2753#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -455,6 +464,10 @@
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2752#2753#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -494,6 +507,10 @@
           <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2752#2753#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -540,10 +557,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kunal/edu/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="63" column="0" lean-forward="true" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+        <state relative-caret-position="120">
+          <caret line="94" column="0" lean-forward="true" selection-start-line="94" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#2752#2753#0" expanded="true" />
+            <element signature="e#2837#2838#0" expanded="true" />
+            <element signature="e#3007#3008#0" expanded="true" />
+            <element signature="e#3083#3084#0" expanded="true" />
           </folding>
         </state>
       </provider>
