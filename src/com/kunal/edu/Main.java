@@ -17,12 +17,14 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Game.fxml"));
         GridPane rootGrid = loader.load();
+
         controller = loader.getController();
+        controller.createplayground();
 
         Pane menupane = (Pane) rootGrid.getChildren().get(0);
         MenuBar menubar = createMenu();
-        menubar.prefWidthProperty().bind(primaryStage.widthProperty());
 
+        menubar.prefWidthProperty().bind(primaryStage.widthProperty());
         menupane.getChildren().add(menubar);
 
 
