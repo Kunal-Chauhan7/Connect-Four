@@ -129,6 +129,7 @@ public class Controller implements Initializable{
 
             if (gameEnded(finalRow,colum)){
                 gameOver();
+                return;
             }
 
             isPlayerOneTurn = !isPlayerOneTurn;
@@ -144,10 +145,22 @@ public class Controller implements Initializable{
         List <Point2D> verticalPoints = IntStream.rangeClosed(row - 3,row + 3)
                 .mapToObj(r -> new Point2D(r , column))
                 .collect(Collectors.toList());
+
         List <Point2D> horizontalPoints = IntStream.rangeClosed(column - 3,column + 3)
                 .mapToObj(col -> new Point2D(row , col))
                 .collect(Collectors.toList());
-        boolean isEnded = checkCombinations(verticalPoints);
+
+        Point2D startPoint1 = new Point2D(row - 3,column + 3);
+        List <Point2D> DiagonalPoints = IntStream.rangeClosed(0,6)
+                .mapToObj(i -> startPoint1.add(i,-i))
+                .collect(Collectors.toList());
+
+        Point2D startPoint2 = new Point2D(row - 3,column - 3);
+        List <Point2D> Diagonal2Points = IntStream.rangeClosed(0,6)
+                .mapToObj(i -> startPoint2.add(i,i))
+                .collect(Collectors.toList());
+
+        boolean isEnded = checkCombinations(verticalPoints) || checkCombinations(horizontalPoints) || checkCombinations(DiagonalPoints) || checkCombinations(Diagonal2Points);
 
         return isEnded;
     }
