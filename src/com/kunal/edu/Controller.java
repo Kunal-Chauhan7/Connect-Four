@@ -1,9 +1,12 @@
 package com.kunal.edu;
 import javafx.animation.TranslateTransition;
+import javafx.application.Platform;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point2D;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -17,6 +20,7 @@ import javafx.util.Duration;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
@@ -35,6 +39,8 @@ public class Controller implements Initializable{
     private static String PlayerTwoName = "Player Two";
 
     private Disc [][] InsertedDisc = new Disc[ROWS][COLUMS];
+
+    private boolean isAllowedToInsert = true;
 
     @FXML
     public GridPane rootGridPane;
@@ -66,6 +72,8 @@ public class Controller implements Initializable{
 
                 circle.setTranslateX(col * (DISCRADIUS+5) + DISCRADIUS/4);
                 circle.setTranslateY(row * (DISCRADIUS+5) + DISCRADIUS/4);
+
+                circle.setSmooth(true);
 
                 rectangle_with_holes = Shape.subtract(rectangle_with_holes,circle);
             }
@@ -100,7 +108,10 @@ public class Controller implements Initializable{
             final int column = col;
 
             rectangle.setOnMouseClicked(event -> {
+                if (isAllowedToInsert){
+                isAllowedToInsert = false;
                 insertdisc(new Disc(isPlayerOneTurn),column);
+                }
             });
 
             rectangleArrayList.add(rectangle);
@@ -126,7 +137,7 @@ public class Controller implements Initializable{
         translateTransition.setToY(row * (DISCRADIUS+5) + DISCRADIUS/4);
         int finalRow = row;
         translateTransition.setOnFinished(event -> {
-
+            isAllowedToInsert = true;
             if (gameEnded(finalRow,colum)){
                 gameOver();
                 return;
@@ -199,7 +210,42 @@ public class Controller implements Initializable{
 
     private void gameOver(){
         String winner = isPlayerOneTurn?PlayerOneName:PlayerTwoName;
-        System.out.println("Winner is " + winner);
+
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Connect four");
+        alert.setHeaderText("Winner is " + winner);
+        alert.setContentText("want to play again");
+
+        ButtonType yesButton = new ButtonType("Yes!");
+        ButtonType noButton = new ButtonType("No!,Exit");
+        alert.getButtonTypes().setAll(yesButton,noButton);
+
+
+        Platform.runLater(()->{
+            Optional<ButtonType> btnClicked = alert.showAndWait();
+
+            if (btnClicked.isPresent() && btnClicked.get() == yesButton){
+                resetGame();
+            }
+            if (btnClicked.isPresent() && btnClicked.get() == noButton){
+                Platform.exit();
+                System.exit(0);
+            }
+        });
+    }
+
+    public void resetGame() {
+        InsertedDiscPane.getChildren().clear();
+        for (int row = 0; row < InsertedDisc.length; row++) {
+            for (int column = 0; column < InsertedDisc[row].length; column++) {
+                InsertedDisc[row][column] = null;
+            }
+        }
+
+        isPlayerOneTurn = true;
+        PlayerNameLabel.setText(PlayerOneName);
+
+        createplayground();
     }
 
 
