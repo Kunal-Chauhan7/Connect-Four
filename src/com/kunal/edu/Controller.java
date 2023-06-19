@@ -1,13 +1,12 @@
 package com.kunal.edu;
 import javafx.animation.TranslateTransition;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Point2D;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
@@ -51,7 +50,20 @@ public class Controller implements Initializable{
     @FXML
     public Label PlayerNameLabel;
 
+    @FXML
+    public TextField playerOneTextField, playerTwoTextField;
+
+    @FXML
+    public Button setNamesButton;
+
+
     public void createplayground(){
+        setNamesButton.setOnAction(event -> {
+            String playerOneName = playerOneTextField.getText();
+            String playerTwoName = playerTwoTextField.getText();
+            PlayerOneName = playerOneName;
+            PlayerTwoName = playerTwoName;
+        });
         Shape rectangle_with_holes = CreateGridStruct();
         List<Rectangle> rectangle_click_list = create_clickable_rectangle();
         rootGridPane.add(rectangle_with_holes,0,1);
